@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  @import "fontsize.scss";
+  @import "document.scss";
+  @import "prose.scss";
+  @import "resume.scss";
+
+  body {
+    @apply overflow-y-scroll bg-lite text-dark;
+
+    &.hide-scroll {
+      @apply overflow-clip;
+    }
+  }
+}

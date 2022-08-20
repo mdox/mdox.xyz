@@ -1,0 +1,19 @@
+.prose {
+  code {
+    @apply block max-w-full overflow-auto whitespace-nowrap bg-frame py-1 px-2 text-sm;
+  }
+
+  ul {
+    @apply ml-5 lg:ml-8;
+    margin-top: 0.25em;
+    margin-bottom: 0.75em;
+  }
+
+  li {
+    @apply my-1 text-base leading-7;
+  }
+
+  img {
+    @apply border border-black;
+  }
+}

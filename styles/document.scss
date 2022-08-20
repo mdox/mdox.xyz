@@ -1,0 +1,21 @@
+@mixin margin {
+  margin: 0.25em 0 0.75em;
+}
+
+.document {
+  h1 {
+    @include margin();
+  }
+  h2 {
+    @include margin();
+  }
+  h3 {
+    @include margin();
+  }
+  p {
+    @include margin();
+  }
+  a {
+    @apply text-link;
+  }
+}

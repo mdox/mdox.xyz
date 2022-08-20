@@ -1,0 +1,37 @@
+.resume {
+  h1 {
+    @apply text-2xl print:text-3xl lg:text-3xl;
+  }
+  h2 {
+    @apply text-xl print:text-2xl lg:text-2xl;
+    text-transform: uppercase;
+    margin: 0.25em 0 0.75em 0;
+  }
+  h3 {
+    @apply text-lg print:text-xl lg:text-xl;
+    margin: 0.25em 0 0.75em 0;
+  }
+  h4 {
+    @apply text-base print:text-lg lg:text-lg;
+    margin: 0.25em 0 0.75em 0;
+  }
+  hr {
+    @apply border-gray-300;
+  }
+  a {
+    @apply text-link;
+  }
+  ul {
+    @apply list-disc pl-4 print:pl-8 lg:pl-8;
+  }
+  li {
+    @apply my-1 text-base leading-5 lg:leading-7;
+  }
+  section {
+    page-break-inside: auto;
+  }
+  article {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+}
