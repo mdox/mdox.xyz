@@ -6,7 +6,9 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { WithRouterProps } from "next/dist/client/with-router";
+import Link from "next/link";
 import { withRouter } from "next/router";
+import Button from "~/components/Button";
 import BasedHead from "../../components/BasedHead";
 import ClientWrap from "../../components/ClientWrap";
 import GalleryCard from "../../components/GalleryCard";
@@ -38,7 +40,15 @@ function GalleryPage(props: GalleryPageProps & WithRouterProps) {
       />
 
       <ClientWrap>
-        <GalleryCard key={props.item.id} {...props.item}></GalleryCard>
+        <div className="flex flex-col gap-2">
+          <GalleryCard key={props.item.id} {...props.item}></GalleryCard>
+          <Link href="/gallery">
+            <a className="self-start">
+              <Button>Back to Gallery Page</Button>
+            </a>
+          </Link>
+        </div>
+
         <ScrollRestorer />
       </ClientWrap>
     </>

@@ -6,6 +6,7 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { WithRouterProps } from "next/dist/client/with-router";
+import Link from "next/link";
 import { withRouter } from "next/router";
 import BasedHead from "../../components/BasedHead";
 import Button from "../../components/Button";
@@ -47,9 +48,11 @@ function SingleMusicPage(props: SingleMusicPageProps & WithRouterProps) {
       <ClientWrap>
         <div className="flex flex-col gap-2">
           <MusicCard key={props.item.id} {...props.item}></MusicCard>
-          <Button className="self-start" onClick={() => props.router.back()}>
-            Go Back
-          </Button>
+          <Link href="/music">
+            <a className="self-start">
+              <Button>Back to Music Page</Button>
+            </a>
+          </Link>
         </div>
 
         <ScrollRestorer />
