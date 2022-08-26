@@ -1,4 +1,5 @@
 import { mdiArrowLeft, mdiArrowRight, mdiMagnify } from "@mdi/js";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { GalleryPost, ImagePost } from "../lib/post-types";
 import Button from "./Button";
@@ -81,7 +82,7 @@ function GalleryCardImages(props: GalleryCardImagesProps) {
               isThin
               isFullyRounded
               isStopPropagation
-              className="absolute left-2 top-1/2 -translate-y-1/2"
+              className="absolute -translate-y-1/2 left-2 top-1/2"
               onClick={onPrev}
             >
               <Icon path={mdiArrowLeft}></Icon>
@@ -91,7 +92,7 @@ function GalleryCardImages(props: GalleryCardImagesProps) {
               isThin
               isFullyRounded
               isStopPropagation
-              className="absolute right-2 top-1/2 -translate-y-1/2"
+              className="absolute -translate-y-1/2 right-2 top-1/2"
               onClick={onNext}
             >
               <Icon path={mdiArrowRight}></Icon>
@@ -102,7 +103,7 @@ function GalleryCardImages(props: GalleryCardImagesProps) {
             isThin
             isFullyRounded
             isStopPropagation
-            className="absolute left-1/2 bottom-2 -translate-x-1/2"
+            className="absolute -translate-x-1/2 left-1/2 bottom-2"
             onClick={onMagnify}
           >
             <Icon path={mdiMagnify}></Icon>
@@ -140,9 +141,11 @@ function GalleryCardImage(props: GalleryCardImageProps) {
 
 function GalleryCardDetails(props: GalleryCardDetailsProps) {
   return (
-    <div className="flex flex-grow flex-col gap-2 p-2">
+    <div className="flex flex-col flex-grow gap-2 p-2">
       <h2>
-        <a href={`/gallery/${props.id}`}>{props.title}</a>
+        <Link href={`/gallery/${props.id}`}>
+          <a>{props.title}</a>
+        </Link>
       </h2>
       <p className="flex-grow whitespace-pre-wrap">{props.description}</p>
       <span className="self-end text-sm">{props.date}</span>

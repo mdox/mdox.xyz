@@ -7,6 +7,7 @@ import {
   mdiSkipNext,
   mdiSkipPrevious,
 } from "@mdi/js";
+import Link from "next/link";
 import { useMemo } from "react";
 import MusicManager from "../../lib/music-manager";
 import {
@@ -71,14 +72,13 @@ export default function LayoutPlay() {
   return storeShowLayoutPlay.isShow && storeMusic.value ? (
     <>
       <ShellShortcut shortcuts={shortcuts} />
-      <div className="sticky bottom-0 flex flex-col items-center bg-frame p-2">
-        <div className="flex w-full flex-col gap-2">
-          <a
-            href={`/music/${storeMusic.value.id}`}
-            className="self-start overflow-hidden overflow-ellipsis text-xl"
-          >
-            {storeMusic.value.title}
-          </a>
+      <div className="sticky bottom-0 flex flex-col items-center p-2 bg-frame">
+        <div className="flex flex-col w-full gap-2">
+          <Link href={`/music/${storeMusic.value.id}`}>
+            <a className="self-start overflow-hidden text-xl overflow-ellipsis">
+              {storeMusic.value.title}
+            </a>
+          </Link>
           <TimeSlider
             duration={storeMusic.value.audioDuration}
             time={storeMusicTime.time}
@@ -86,7 +86,7 @@ export default function LayoutPlay() {
           ></TimeSlider>
         </div>
         <div className="flex items-center gap-2">
-          <Button isThin isFullyRounded isDisabled className="h-8 w-8"></Button>
+          <Button isThin isFullyRounded isDisabled className="w-8 h-8"></Button>
           <Button
             isThin
             isIconSized
@@ -108,7 +108,7 @@ export default function LayoutPlay() {
             isIconSized
             isFullyRounded
             isDark
-            className="h-12 w-12"
+            className="w-12 h-12"
             onClick={onToggle}
           >
             <Icon path={storeMusicPlay.isPlaying ? mdiPause : mdiPlay}></Icon>
@@ -132,7 +132,7 @@ export default function LayoutPlay() {
           <Button
             isThin
             isFullyRounded
-            className="h-8 w-8 bg-danger"
+            className="w-8 h-8 bg-danger"
             onClick={() => MusicManager.stop()}
           >
             <Icon path={mdiClose}></Icon>

@@ -33,6 +33,7 @@ function ResumeTestPage(props: WithRouterProps) {
         <a
           href="/documents/resume.pdf"
           download="Resume - Marton David Orosz.pdf"
+          target="_blank"
         >
           <Button>
             <Icon path={mdiDownload} size={1}></Icon>
@@ -45,12 +46,12 @@ function ResumeTestPage(props: WithRouterProps) {
         </Button>
       </div>
 
-      {/* <div className="mb-2 mt-4 h-2 rounded-full bg-emerald-300 shadow print:hidden"></div> */}
+      {/* <div className="h-2 mt-4 mb-2 rounded-full shadow bg-emerald-300 print:hidden"></div> */}
 
-      <main className="resume space-y-4 p-2 print:p-4 lg:p-4">
+      <main className="p-2 space-y-4 resume print:p-4 lg:p-4">
         {/* PROFILE */}
         <section className="flex">
-          <div className="sapce-y-2 flex w-8/12 shrink-0 flex-col space-y-2">
+          <div className="flex flex-col w-8/12 space-y-2 sapce-y-2 shrink-0">
             <h1>Márton Dávid Orosz</h1>
             <h4>
               E-mail: <a href="mailto:mdox@mdox.xyz">mdox@mdox.xyz</a>
@@ -59,10 +60,16 @@ function ResumeTestPage(props: WithRouterProps) {
               Phone: <a href="tel:+36303910610">+36 30 391 0610</a>
             </h4>
             <h4>
-              GitHub: <a href="https://github.com/mdox">github.com/mdox</a>
+              GitHub:{" "}
+              <a href="https://github.com/mdox" target="_blank">
+                github.com/mdox
+              </a>
             </h4>
             <h4>
-              Website: <a href="https://mdox.xyz">mdox.xyz</a>
+              Website:{" "}
+              <a href="https://mdox.xyz" target="_blank">
+                mdox.xyz
+              </a>
             </h4>
           </div>
           <div>
