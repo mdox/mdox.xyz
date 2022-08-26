@@ -5,5 +5,5 @@ export type LayoutContentProps = {
 };
 
 export default function LayoutContent(props: LayoutContentProps) {
-  return <main className="px-2 print:px-0">{props.children}</main>;
+  return <main className="grid px-2 print:px-0">{props.children}</main>;
 }
