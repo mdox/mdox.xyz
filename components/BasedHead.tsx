@@ -18,6 +18,8 @@ export default function BasedHead(props: BasedHeadProps) {
   // prettier-ignore
   return (
     <Head>
+      <link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml"  />
+
       {props.title === undefined ? null : (
       <title>{props.title}</title>)}
       {props.title === undefined ? null : (
