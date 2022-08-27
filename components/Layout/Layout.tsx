@@ -10,7 +10,7 @@ export type LayoutProps = {
 
 export default function Layout(props: LayoutProps) {
   return (
-    <div className="flex flex-col max-w-screen-lg min-h-screen mx-auto print:mx-0 print:min-h-0 print:max-w-none">
+    <div className="flex flex-col max-w-screen-lg min-h-screen gap-2 mx-auto print:mx-0 print:min-h-0 print:max-w-none">
       <div className="flex flex-col-reverse mb-auto">
         <LayoutContent>{props.children}</LayoutContent>
         <div className="w-full h-2" />
