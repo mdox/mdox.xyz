@@ -12,7 +12,7 @@
     @apply overflow-y-scroll bg-lite text-dark;
 
     &.hide-scroll {
-      @apply overflow-clip;
+      @apply overflow-y-hidden;
     }
   }
 }
