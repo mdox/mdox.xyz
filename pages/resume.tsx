@@ -33,7 +33,7 @@ function ResumeTestPage(props: WithRouterProps) {
         <a
           href="/documents/resume.pdf"
           download="Resume - Marton David Orosz.pdf"
-          target="_blank"
+          rel="noopener"
         >
           <Button>
             <Icon path={mdiDownload} size={1}></Icon>
@@ -61,13 +61,17 @@ function ResumeTestPage(props: WithRouterProps) {
             </h4>
             <h4>
               GitHub:{" "}
-              <a href="https://github.com/mdox" target="_blank">
+              <a
+                href="https://github.com/mdox"
+                target="_blank"
+                rel="noreferrer"
+              >
                 github.com/mdox
               </a>
             </h4>
             <h4>
               Website:{" "}
-              <a href="https://mdox.xyz" target="_blank">
+              <a href="https://mdox.xyz" target="_blank" rel="noreferrer">
                 mdox.xyz
               </a>
             </h4>
