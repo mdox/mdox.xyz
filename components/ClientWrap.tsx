@@ -1,4 +1,5 @@
-import { isValidElement, ReactNode, useEffect, useState } from "react";
+import { isValidElement, ReactNode } from "react";
+import { useStoreIsClient } from "~/store/store-is-client";
 import Show from "./Show";
 
 export type ClientWrapProps = {
@@ -6,17 +7,10 @@ export type ClientWrapProps = {
 };
 
 export default function ClientWrap(props: ClientWrapProps) {
-  const [stateIsMounted, setStateIsMounted] = useState(false);
-
-  useEffect(() => {
-    setStateIsMounted(true);
-    return () => {
-      setStateIsMounted(false);
-    };
-  }, []);
+  const storeIsClient = useStoreIsClient();
 
   return (
-    <Show when={stateIsMounted}>
+    <Show when={storeIsClient.isClient}>
       {isValidElement(props.children) ? props.children : <>{props.children}</>}
     </Show>
   );
