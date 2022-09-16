@@ -127,7 +127,7 @@ function ResumeTestPage(props: WithRouterProps) {
           <article>
             <h3>Linux</h3>
             <ul>
-              <li>System Admin or Super User</li>
+              <li>Super User</li>
               <li>Webserver, Mailserver</li>
               <li>Website generator using Shell Script</li>
             </ul>
@@ -143,8 +143,7 @@ function ResumeTestPage(props: WithRouterProps) {
           <article>
             <h3>Technologies</h3>
             <ul>
-              <li>3 years: VSCode</li>
-              <li>2 years: Linux, git, Vim</li>
+              <li>2 years: Linux, git</li>
               <li>
                 1 year: NodeJS, Nuxt2, NextJS, React, TypeScript, Figma, OpenGL
               </li>
